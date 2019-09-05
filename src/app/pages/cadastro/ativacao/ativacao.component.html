@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Ativação</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="form">
+        <div class="icon-descricao">
+            <ion-icon ios="ios-code" md="md-code"></ion-icon>
+            <p>Coloque o código que você recebeu por SMS abaixo:</p>
+        </div>
+            
+        <!-- Código de Ativação -->
+        <ion-item>
+            <ion-label position="floating">Código de Ativação</ion-label>
+            <ion-input formControlName="cod_ativacao" type="tel" minlength="4" maxlength="4"></ion-input>
+        </ion-item>
+        <app-error-input [name]="cod_ativacao"></app-error-input>
+            
+        <div margin-top>
+            <ion-button expand="block" color="light" margin-bottom>Reenviar Código</ion-button>
+        </div>
+    </form>
+</ion-content>
+
+<ion-footer no-padding>
+    <ion-button expand="full" color="primary" no-margin (click)="enviar()" [disabled]="form.invalid">Finalizar</ion-button>
+</ion-footer>

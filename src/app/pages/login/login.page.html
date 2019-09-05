@@ -1,0 +1,25 @@
+<ion-content padding>
+    <div class="logo">
+        <img src="https://logosbynick.com/wp-content/uploads/2018/03/final-logo-example.png" alt="logo">
+    </div>
+
+    <form [formGroup]="form">
+        <!-- Celular -->
+        <ion-item>
+            <ion-label position="floating">Celular</ion-label>
+            <ion-input formControlName="celular" type="tel" [brmasker]="{form: form.get('celular'), mask: '(99) 99999-9999', len:14}"></ion-input>
+        </ion-item>
+        
+        <!-- SENHA -->
+        <ion-item>
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input formControlName="senha" type="password"></ion-input>
+        </ion-item>
+        
+        <div margin-top>
+            <ion-button ion-button expand="block" color="primary" margin-bottom (click)="enviar()" [disabled]="form.invalid">Entrar</ion-button>
+            <ion-button ion-button expand="block" color="dark" margin-bottom (click)="esqueciSenha()">Esqueci minha senha</ion-button>
+            <ion-button ion-button expand="block" color="light" (click)="cadastrar()">Não tenho cadastro</ion-button>
+        </div>
+    </form>
+</ion-content>

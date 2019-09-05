@@ -1,0 +1,12 @@
+<div class="error" *ngIf="name.invalid && (name.dirty || name.touched)">
+    <span *ngIf="name.errors.required">Campo obrigatório</span>
+    <span *ngIf="name.errors.email">E-mail inválido</span>
+    <span *ngIf="name.errors.minlength">O mínino de caracteres para este campo é de {{name.errors.minlength.requiredLength}}</span>
+    <span *ngIf="name.errors.maxlength">O maxímo de caracteres para este campo é de {{name.errors.maxlength.requiredLength}}</span>
+    <span *ngIf="name.errors.CNPJError">CNPJ inválido</span>
+    <span *ngIf="name.errors.CPFError">CPF inválido</span>
+    <span *ngIf="name.errors.FullNameError">Digite seu nome completo</span>
+    <span *ngIf="name.errors.PISError">PIS/INSS inválido</span>
+    <span *ngIf="name.errors.RGError">RG inválido</span>
+    <span *ngIf="name.errors.TelefoneError">Número inválido</span>
+</div>

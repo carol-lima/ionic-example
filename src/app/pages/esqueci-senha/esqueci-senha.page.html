@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Esqueci Minha Senha</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="icon-descricao">
+        <ion-icon ios="ios-key" md="md-key"></ion-icon>
+        <p>Coloque seu telefone abaixo e em breve você receberá um SMS com seu novo acesso.</p>
+    </div>
+
+    <form [formGroup]="form">
+        <!-- Celular -->
+        <ion-item>
+            <ion-label position="floating">Celular</ion-label>
+            <ion-input formControlName="celular" type="tel"
+                [brmasker]="{form: form.get('celular'), mask: '(99)99999-9999', len:14}"></ion-input>
+        </ion-item>
+
+        <div margin-top>
+            <ion-button ion-button expand="block" color="primary" margin-bottom (click)="enviar()"
+                [disabled]="form.invalid">Enviar</ion-button>
+        </div>
+    </form>
+</ion-content>
